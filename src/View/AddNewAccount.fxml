@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+
+
+<VBox prefWidth="800.0" alignment="center" spacing="10" styleClass="root" xmlns:fx="http://javafx.com/fxml" fx:controller="Controller.AddNewAccountController">
+      
+	<HBox alignment="center" spacing="10">
+	    <ImageView>
+	        <image>
+	            <Image url="@bank-icon.png" />
+	        </image>
+	    </ImageView>
+    	<Label text="Add an Account" styleClass="h1" />
+    </HBox>
+    
+    <HBox alignment="center" spacing="10">
+    	<Label text="Account Type:"/>
+    	<TextField fx:id="accountTypeTf"/>
+    </HBox>
+    
+    <HBox alignment="center" spacing="10"> 
+    	<Button fx:id="addAccountBtn" disable="true" text="Add Account" styleClass="longButton" onAction="#handleAddAccount"/>
+	</HBox>
+	
+	<VBox alignment="center" spacing="10">
+        <Button text="Close" styleClass="button" fx:id="close" onAction="#handleClose"/>
+    </VBox>
+	
+	<stylesheets>
+        <URL value="@bank.css" />
+    </stylesheets>
+
+</VBox>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+
+
+<VBox prefWidth="500.0" alignment="center" spacing="10" styleClass="root" xmlns:fx="http://javafx.com/fxml" fx:controller="Controller.SelectAccountController">
+      
+	<HBox alignment="center" spacing="10">
+	    <ImageView>
+	        <image>
+	            <Image url="@bank-icon.png" />
+	        </image>
+	    </ImageView>
+    	<Label text="${'Hi, ' + controller.customer.name + '!'}" styleClass="h1" />
+    </HBox>
+    
+    <VBox alignment="center" spacing="10">
+    	<Label text="Please select or add a new account"/>
+    </VBox>
+    
+    <TableView fx:id="accountsTv" prefWidth="300" prefHeight="200">
+    
+    	<columns>
+	        <TableColumn fx:id="accountTypeClm" text="Account Type" prefWidth="110"/>
+	        <TableColumn fx:id="balanceClm" text="Balance" prefWidth="125"/>
+		</columns>
+		
+    <placeholder>
+    	<Label text="You have no accounts." styleClass="placeholder"/>
+    </placeholder>
+    
+    </TableView>
+    
+    <HBox alignment="center" spacing="10">
+    	<Button fx:id="removeAccountBtn" disable="true" text="Remove Account" styleClass="button" onAction="#handleRemoveAccount"/>   
+    	<Button fx:id="selectAccountBtn" disable="true" text="View Account" styleClass="button" onAction="#handleViewAccount"/>
+    	<Button fx:id="addAccountBtn" text="Add Account" styleClass="button" onAction="#handleAddAccount"/>
+    </HBox>
+	
+    <VBox alignment="center" spacing="10">
+    	<Text fx:id="feedback"/>
+        <Button text="Close" styleClass="button" fx:id="close" onAction="#handleClose"/>
+    </VBox>
+
+	
+	<stylesheets>
+        <URL value="@bank.css" />
+    </stylesheets>
+
+</VBox>

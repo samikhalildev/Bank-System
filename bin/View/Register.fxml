@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.HBox?>
+
+
+<VBox prefWidth="800.0" spacing="10" alignment="center" styleClass="root" xmlns:fx="http://javafx.com/fxml" fx:controller="Controller.RegisterController">
+	<HBox alignment="center" spacing="10">
+	    <ImageView>
+	        <image>
+	            <Image url="@bank-icon.png" />
+	        </image>
+	    </ImageView>
+    	<Label text="Bank App" styleClass="h1" />
+    </HBox>
+    
+	<GridPane alignment="center" hgap="10" vgap="10">
+        <Label text="Name:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+        <TextField fx:id="nameTf" GridPane.columnIndex="1" GridPane.rowIndex="0"/> 
+                       
+        <Label text="Age:" GridPane.columnIndex="2" GridPane.rowIndex="0"/>
+        <TextField fx:id="ageTf" GridPane.columnIndex="3" GridPane.rowIndex="0"/>
+        
+        <Label text="Gender:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+        <TextField fx:id="genderTf" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+        
+        <Label text="Location:" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+        <TextField fx:id="locationTf" GridPane.columnIndex="3" GridPane.rowIndex="1"/>
+   		
+   		<Label text="Username:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+        <TextField fx:id="usernameTf" GridPane.columnIndex="1" GridPane.rowIndex="2"/> 
+                       
+        <Label text="Password:" GridPane.columnIndex="2" GridPane.rowIndex="2"/>
+        <PasswordField fx:id="passwordTf" GridPane.columnIndex="3" GridPane.rowIndex="2"/>  
+   	</GridPane>  
+        
+    <VBox alignment="center" spacing="10">
+        <Button fx:id="registerBtn" disable="true" styleClass="longButton" text="Register" onAction="#handleRegister" />
+        <Text fx:id="feedback" styleClass="text"/>
+        <Button styleClass="button" text="Already registered?" fx:id="close" onAction="#handleLogin" />
+        <Button text="Close" styleClass="button" fx:id="close" onAction="#handleClose"/>
+    </VBox>
+
+	
+	<stylesheets>
+	
+        <URL value="@bank.css" />
+        
+    </stylesheets>
+
+</VBox>

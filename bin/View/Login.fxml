@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+
+
+<VBox prefWidth="800.0" alignment="center" spacing="10" styleClass="root" xmlns:fx="http://javafx.com/fxml" fx:controller="Controller.LoginController">
+      
+	<HBox alignment="center" spacing="10">
+	    <ImageView>
+	        <image>
+	            <Image url="@bank-icon.png" />
+	        </image>
+	    </ImageView>
+    	<Label text="Bank App" styleClass="h1" />
+    </HBox>
+    
+	<GridPane alignment="center" hgap="10" vgap="10">
+        <Label text="Username:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+        <TextField fx:id="usernameTf" text="admin" GridPane.columnIndex="1" GridPane.rowIndex="0"/> 
+                       
+        <Label text="Password:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+        <PasswordField fx:id="passwordTf" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+    </GridPane>
+    
+    <VBox alignment="center" spacing="10">
+    
+   		<HBox alignment="center" spacing="10">
+        	<Button fx:id="loginBtn" disable="true" styleClass="button" text="Login" onAction="#handleLogin"/>
+        	<Button fx:id="adminBtn" text="Admin" styleClass="adminButton" onAction="#OpenAdminWindow"/>
+        </HBox>
+        
+        <Text fx:id="feedback"/>
+        <Button styleClass="button" text="Not a member?" fx:id="close" onAction="#handleSignUp"/>
+        <Button text="Close" styleClass="button" fx:id="close" onAction="#handleClose"/>
+    </VBox>
+
+	<stylesheets>
+        <URL value="@bank.css" />
+    </stylesheets>
+
+</VBox>

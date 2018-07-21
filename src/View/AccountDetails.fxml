@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+
+
+<VBox prefWidth="800.0" alignment="center" spacing="10" styleClass="root" xmlns:fx="http://javafx.com/fxml" fx:controller="Controller.AccountDetailsController">
+      
+	<HBox alignment="center" spacing="10">
+	    <ImageView>
+	        <image>
+	            <Image url="@bank-icon.png" />
+	        </image>
+	    </ImageView>
+    	<Label text="Account Details" styleClass="h1" />
+    </HBox>
+
+    <HBox alignment="center" spacing="20">
+     
+	    <GridPane alignment="center" hgap="10" vgap="10">	    
+			
+			<Label text="Account Type:" GridPane.columnIndex="0" GridPane.rowIndex="0"/> 
+			<Label text="${controller.account.accountType}" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+			
+			<Label text="Account Number:" GridPane.columnIndex="0" GridPane.rowIndex="1"/> 
+			<Label text="${controller.account.accountNumber}" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+			
+			<Label text="BSB:" GridPane.columnIndex="0" GridPane.rowIndex="2"/> 
+			<Label text="${controller.account.BSB}" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+	    </GridPane>
+	    
+    </HBox>
+    
+    <VBox alignment="center" spacing="10">
+		<Text fx:id="x"/>
+        <Button text="Close" styleClass="button" fx:id="close" onAction="#handleClose"/>
+    </VBox>
+	    
+	<stylesheets>
+        <URL value="@bank.css" />
+    </stylesheets>
+
+</VBox>

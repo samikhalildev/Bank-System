@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+
+<VBox prefWidth="600" spacing="10" alignment="center" styleClass="root" xmlns:fx="http://javafx.com/fxml" fx:controller="Controller.AllCustomersController">
+      
+	<HBox alignment="center" spacing="10">
+	    <ImageView>
+	        <image>
+	            <Image url="@bank-icon.png" />
+	        </image>
+	    </ImageView>
+    	<Label text="All Customers" styleClass="h1" />
+    </HBox>
+    
+
+    <TableView fx:id="customersTv" prefHeight="250">
+    
+	    <columns>
+	    	        
+	        <TableColumn text="Username" prefWidth="100">
+	                <cellValueFactory>
+	                    <PropertyValueFactory property="username" />
+	                </cellValueFactory>
+	        </TableColumn>
+	        
+	    	<TableColumn text="Name" prefWidth="75">
+	                <cellValueFactory>
+	                    <PropertyValueFactory property="name" />
+	                </cellValueFactory>
+	        </TableColumn>
+	        
+      		<TableColumn text="Age" prefWidth="50">
+	                <cellValueFactory>
+	                    <PropertyValueFactory property="age" />
+	                </cellValueFactory>
+	        </TableColumn>
+	        
+	        <TableColumn text="Gender" prefWidth="65">
+	                <cellValueFactory>
+	                    <PropertyValueFactory property="gender" />
+	                </cellValueFactory>
+	        </TableColumn>
+	        
+	        <TableColumn text="Location" prefWidth="75">
+	                <cellValueFactory>
+	                    <PropertyValueFactory property="location" />
+	                </cellValueFactory>
+	        </TableColumn>
+
+	    </columns>
+    
+    
+    	<placeholder>
+            <Label text="No customers available." styleClass="placeholder"/>
+        </placeholder>
+    	
+    </TableView>
+    
+    <VBox alignment="center" spacing="10">
+    
+	    <HBox alignment="center" spacing="10">
+	    	<Button fx:id="viewAccountsBtn" disable="true" text="View Accounts" styleClass="button" onAction="#handleViewAccounts"/>
+	    	<Button fx:id="removeCustomerBtn" disable="true" text="Remove Customer" styleClass="button" onAction="#handleRemoveCustomer"/>
+    	</HBox>
+    	
+    	<Text fx:id="feedback"/>
+        <Button text="Close" styleClass="button" fx:id="close" onAction="#handleClose"/>
+    </VBox>
+
+	
+	<stylesheets>
+        <URL value="@bank.css" />
+    </stylesheets>
+
+</VBox>

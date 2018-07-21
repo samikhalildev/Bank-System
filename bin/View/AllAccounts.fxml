@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+
+<VBox spacing="10" alignment="center" styleClass="root" xmlns:fx="http://javafx.com/fxml" fx:controller="Controller.AllAccountsController">
+      
+	<HBox alignment="center" spacing="10">
+	    <ImageView>
+	        <image>
+	            <Image url="@bank-icon.png" />
+	        </image>
+	    </ImageView>
+    	<Label text="${controller.customer.name + '\'s Accounts'}" styleClass="h1" />
+    </HBox>
+    
+
+    <TableView fx:id="accountsTv" prefHeight="250">
+    
+	    <columns>
+	    
+	        <TableColumn fx:id="accountTypeClm" text="Account Type" prefWidth="110"/>
+			<TableColumn fx:id="totolTransfersClm" text="Total Transfers" prefWidth="125"/>
+			<TableColumn fx:id="totalWithdrawnClm" text="Total Withdrawn" prefWidth="125"/>
+			<TableColumn fx:id="totalDepositsClm" text="Total Deposits" prefWidth="125"/>
+	        <TableColumn fx:id="balanceClm" text="Current Balance" prefWidth="125"/>
+
+	    </columns>
+    
+    
+    	<placeholder>
+            <Label text="${controller.customer.name + ' has no accounts.'}" styleClass="placeholder"/>
+        </placeholder>
+    	
+    </TableView>
+    
+    <VBox alignment="center" spacing="10">
+    
+    	<HBox alignment="center" spacing="10">
+	    	<Button fx:id="viewTransactionsBtn" disable="true" text="View Transactions" styleClass="button" onAction="#handleViewTransactions"/>
+	    	<Button fx:id="removeAccountBtn" disable="true" text="Remove Account" styleClass="button" onAction="#handleRemoveAccount"/>
+    	</HBox>
+    	
+    	<Text fx:id="feedback"/>
+        <Button text="Close" styleClass="button" fx:id="close" onAction="#handleClose"/>
+    </VBox>
+
+	
+	<stylesheets>
+        <URL value="@bank.css" />
+    </stylesheets>
+
+</VBox>
